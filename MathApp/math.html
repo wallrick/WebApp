@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!-- This allows the app to be used with no network connection.
+<html manifest="cache.manifest"> -->
+<!-- <html manifest="manifest.php"> -->
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<link rel="stylesheet" type="text/css" href="css/math_mobile.css" media="only screen and (max-width: 480px)" />
+<link rel="stylesheet" type="text/css" href="css/math_desktop.css" media="screen and (min-width: 481px)" />
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/math.js"></script>
+
+<title>Math</title>
+
+</head>
+<body ontouchmove="BlockMove(event)">
+<br />
+<br />
+
+<div id="equation" style="">
+	<div id="defA" class="trow" style="">
+		<div class="tcell" style="">
+			<div id="first" class="eqtext" style=""></div>
+		</div>
+	</div>
+	<div id="defB" class="trow" style="">
+		<div class="tcell" style="">
+			<div id="addsub" class="eqtext" style="display: inline"></div>
+			<div id="second" class="eqtext" style="display: inline"></div>
+		</div>
+	</div>
+	<div class="trow" style="">
+		<div class="tcell" style="">
+			<hr style=""></hr>
+		</div>
+	</div>
+	<div class="trow" style="">
+		<div class="tcell" style="">
+			<input id="math_result" spellcheck="false" maxlength="6" size="6" readonly onclick="clearInput();" ontouchstart="clearInput();"></input>
+		</div>
+	</div>
+</div>
+
+<div class="bcheck" style="">
+	<button id="math_check" name="check" onclick="validate()" ontouchstart="validate();">Check</button>
+</div>
+
+<br />
+
+<div class="total" style="">
+	<div style="display: inline">Total:</div>
+	<div id="result_total" style="display: inline"></div>
+</div>
+
+<!--  Key Pad -->
+<table>
+	<tr>
+		<td>
+		<input type="button" id="b_0" class="num" value="0" onclick="update(0);" ontouchstart="update(0);"/>
+		</td>
+		<td>
+		<input type="button" id="b_1" class="num" value="1" onclick="update(1);" ontouchstart="update(1);"/>
+		</td>
+		<td>
+		<input type="button" id="b_2" class="num" value="2" onclick="update(2);" ontouchstart="update(2);"/>
+		</td>
+		<td>
+		<input type="button" id="b_3" class="num" value="3" onclick="update(3);" ontouchstart="update(3);"/>
+		</td>
+		<td>
+		<input type="button" id="b_4" class="num" value="4" onclick="update(4);" ontouchstart="update(4);"/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<input type="button" id="b_5" class="num" value="5" onclick="update(5);" ontouchstart="update(5);"/>
+		</td>
+		<td>
+		<input type="button" id="b_6" class="num" value="6" onclick="update(6);" ontouchstart="update(6);"/>
+		</td>
+		<td>
+		<input type="button" id="b_7" class="num" value="7" onclick="update(7);" ontouchstart="update(7);"/>
+		</td>
+		<td>
+		<input type="button" id="b_8" class="num" value="8" onclick="update(8);" ontouchstart="update(8);"/>
+		</td>
+		<td>
+		<input type="button" id="b_9" class="num" value="9" onclick="update(9);" ontouchstart="update(9);"/>
+		</td>
+	</tr>
+</table>
+
+<script type="text/javascript">
+	clearInput();
+	initEquation();
+	initButtons();
+</script>
+</body>
+</html>
